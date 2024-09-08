@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="column is-2 pl-5 pt-5">
+    <aside class="is-fullheight menu">
+        <div class="profile-section has-text-centered mb-5">
+            <p class="is-size-5 mt-3">Hi {{ user.username }}</p>
+        </div>
+
+        <p class="menu-label">Profile</p>
+        <ul class="menu-list">
+            <li><a href="{% url 'settings' %}">Settings</a></li>
+            <li><a href="{% url 'statistics' %}">Statistics</a></li>
+            <li>
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+            </li>
+        </ul>
+
+        <p class="menu-label">Todo List</p>
+        <ul class="menu-list">
+            <li><a href="{% url 'inbox' %}">Inbox</a></li>
+        </ul>
+    </aside>
+</div>

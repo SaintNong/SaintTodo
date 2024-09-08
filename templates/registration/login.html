@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container box is-max-tablet">
+            <form method="POST">
+                <h1 class="title">Login</h1>
+
+                {% csrf_token %}
+
+                <div class="field">
+                    <label class="label" for="id_username">Username</label>
+                    <div class="control">
+                        <input placeholder="Username" class="input" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="id_password">Password</label>
+                    <div class="control">
+                        <input placeholder="Password" class="input" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+                    </div>
+                </div>
+
+                <button type="submit" class="button is-primary">Log in</button>
+
+            </form>
+
+
+            {% if messages %}
+            <ul class="messages mt-5">
+                {% for message in messages %}
+                <div class="notification is-danger">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+

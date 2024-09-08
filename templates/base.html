@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html data-theme="{{ user.profile.theme }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SaintTodo - {% block title %}{% endblock %}</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.3/tsparticles.bundle.min.js"></script>
+    <script src="{% static 'js/background.js' %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+
+
+
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    <main>
+        <div id="tsparticles"></div>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+</body>
+
+</html>
+

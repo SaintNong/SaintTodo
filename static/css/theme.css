@@ -1,0 +1,14 @@
+[data-theme=dark]
+.theme-dark {
+  --bulma-primary-h: 295deg;
+  --bulma-primary-l: 63%;
+  --bulma-link-h: 238deg;
+  --bulma-success-s: 89%;
+  --bulma-success-l: 44%;
+  --bulma-warning-h: 51deg;
+  --bulma-danger-h: 360deg;
+  --bulma-danger-l: 61%;
+  --bulma-scheme-h: 268;
+  --bulma-scheme-s: 8%;
+}
+
