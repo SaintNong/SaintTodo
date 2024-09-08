@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container box is-max-tablet">
+            <form method="POST">
+                <h1 class="title">Sign Up</h1>
+
+                {% csrf_token %}
+
+                <div class="field">
+                    <label class="label" for="id_username">Username</label>
+                    <div class="control">
+                        <input placeholder="Username" class="input" type="text" name="username" value="" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username">
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="field">
+                    <label class="label" for="id_password1">Password</label>
+                    <div class="control">
+                        <input placeholder="Password" class="input" type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="id_password2">Confirm Password</label>
+                    <div class="control">
+                        <input placeholder="Confirm your password" class="input" type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+                    </div>
+                </div>
+
+                <button type="submit" class="button is-primary">Sign Up</button>
+            </form>
+
+            {% if messages %}
+            <ul class="messages mt-5">
+                {% for message in messages %}
+                <div class="notification is-danger">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+

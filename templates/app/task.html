@@ -1,0 +1,47 @@
+
+<div id="task" class="columns is-vcentered" data-completed="{{ task.completed }}">
+
+    <div class="column">
+
+
+        {% if task.completed %}
+        <strike>
+        {% else %}
+        <strong>
+        {% endif %}
+        <p>{{ task.title }}</p>
+        {% if task.completed %}
+        </strike>
+        {% else %}
+        </strong>
+        {% endif %}
+    </div>
+
+
+    <div class="buttons">
+        <form action="{% url 'toggle_task' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="task_id" value="{{ task.id }}">
+
+            {% if not task.completed %}
+                <button class="button is-success" type="submit">Finish</button>
+            {% else %}
+                <button class="button" type="submit">Undo</button>
+            {% endif %}
+
+        </form>
+
+        {% if task.completed %}
+        <form action="{% url 'delete_task' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="task_id" value="{{ task.id }}">
+            <button class="tag is-delete is-danger" type="submit"></button>
+        </form>
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+

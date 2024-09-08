@@ -1,0 +1,27 @@
+{% extends "app/app_base.html" %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Statistics</h1>
+        <p class="subtitle">(WIP)</p>
+
+        <div class="columns">
+            <div class="column">
+                <div class="box">
+                    <h2 class="title is-4">Tasks Completed</h2>
+                    <p>You've completed <strong>0</strong> tasks in total.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="box">
+                    <h2 class="title is-4">Tasks Pending</h2>
+                    <p>You have <strong>{{ pending_tasks }}</strong> task{% if pending_tasks != 1 %}s{% endif %} pending.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

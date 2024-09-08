@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="hero is-fullheight-with-navbar">
+    <div class="hero-body">
+
+        <div class="container">
+
+            
+            <div class="columns">
+                <section class="column section is-half">
+                    <p id="title-main" class="title">Get things done faster with SaintTodo.</p>
+                    <p id="subtitle-1" class="subtitle mt-5">Simple, as it should be.</p>
+                    <p id="subtitle-2" class="subtitle">Featureful and modern, yet not bloated.</p>
+                    <p id="subtitle-3" class="subtitle">Free and Open Source.</p>
+
+
+                    <a id="title-button" class="button is-primary is-medium" href="{% url 'signup' %}">Sign Up Now!</a>
+                </section>
+
+                <section class="column section">
+                    <div class="container">
+                        <p id="heading-features" class="title">Features</p>
+                        <div class="columns is-multiline">
+                            <div class="column is-half">
+                                <div id="feature-1" class="box">
+                                    <p class="title is-4">Simple and minimalist</p>
+                                    <p>
+                                        SaintTodo contains just what you need, and nothing more. <br>
+                                        With no investors to please, there are no useless generative AI features to be found here.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column is-half is-flex">
+                                <div id="feature-2" class="box">
+                                    <p class="title is-4">All your tasks in one place</p>
+                                    <p>Synchronized on all devices all the time, your tasks are with you wherever you go.</p>
+                                </div>
+                            </div>
+                            <div class="column is-half is-full">
+                                <div id="feature-3" class="box">
+                                    <p class="title is-4">Free and Open Source</p>
+                                    <p>The source code is right <a class="is-link" href="https://github.com/SaintNong/SaintTodo">here.</a></p>
+                                    <p>You can even contribute yourself!</p>
+                                </div>
+                            </div>
+                            <div class="column is-half is-flex">
+                                <div id="feature-4" class="box">
+                                    <p class="title is-4">Self hostable</p>
+                                    <p>Don't trust us? Then you can try hosting SaintTodo yourself!</p>
+                                    <p>There is a guide on the <a class="is-link" href="https://github.com/SaintNong/SaintTodo">GitHub repository.</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+        <strong>SaintTodo</strong> by Ning.
+        </p>
+        <p>
+            The source code is licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+    </div>
+</footer>
+
+{% endblock %}
+
